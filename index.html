@@ -81,6 +81,12 @@
       <input id="institution" name="entry.1700040751" type="text" required="required" class="form-control">
     </div>
   </div>
+      <div class="form-group row">
+    <label for="certCode" class="col-3 col-form-label">NPI or SLN<span style="color:red;"> *</span></label> 
+    <div class="col-9">
+      <input id="certCode" name="entry.1331309952" type="text" required="required" class="form-control">
+    </div>
+  </div>
   <!--<div class="form-group row">
     <label for="certCode" class="col-3 col-form-label">Certication Code<span style="color:red;"> *</span></label> 
     <div class="col-9">
@@ -261,7 +267,7 @@
     let txt = document.querySelectorAll('[type="text"]');
     for (let i = 0; i < txt.length; i++) {
         txt[i].oninput = () => {
-            if (!(txt[0].value == '') && !(txt[1].value == '') && !(txt[2].value == '') && !(txt[3].value == '') && !(txt[4].value == '') && !(txt[5].value == '') && !(txt[6].value == '') && !(txt[7].value == '') && !(txt[8].value == '') && !(txt[9].value == '') && !(txt[10].value == '')) {
+            if (!(txt[0].value == '') && !(txt[1].value == '') && !(txt[2].value == '') && !(txt[3].value == '') && !(txt[4].value == '') && !(txt[5].value == '') && !(txt[6].value == '') && !(txt[7].value == '') && !(txt[8].value == '') && !(txt[9].value == '') && !(txt[10].value == '') && !(txt[11].value == '')) {
                 send.removeAttribute('disabled')
             }
         }
@@ -303,6 +309,7 @@ function postToGoogle() {
                 var field12 = $("#email").val();
                 var field13 = $("#selectTextbook").val();
                 var field14 = $("#cost").val();
+                var field15 = $("#certCode").val();
         
         //if(field1 == ""){
         //   alert('Please Fill Your HCP First Name');
@@ -333,7 +340,7 @@ function postToGoogle() {
   
                 $.ajax({
                     url: "https://docs.google.com/forms/d/e/1FAIpQLSekjA4YnTW-PGsoWauuHyP5NlKN0Ss7iVvB_QnhGA5vaZF2IQ/formResponse?",
-          data: {"entry.845524922": field1, "entry.1613466724": field2, "entry.237493461": field3, "entry.1870468462": field4, "entry.1700040751": field5, "entry.947568364": field6, "entry.1821835609": field7, "entry.365769822": field8, "entry.830927995": field9, "entry.452251542": field10, "entry.1803198412": field11, "entry.1059165522": field12, "entry.569907731": field13, "entry.803252031": field14},
+          data: {"entry.845524922": field1, "entry.1613466724": field2, "entry.237493461": field3, "entry.1870468462": field4, "entry.1700040751": field5, "entry.947568364": field6, "entry.1821835609": field7, "entry.365769822": field8, "entry.830927995": field9, "entry.452251542": field10, "entry.1803198412": field11, "entry.1059165522": field12, "entry.569907731": field13, "entry.803252031": field14, "entry.1331309952": field15,},
                     type: "POST",
                     dataType: "xml",
                     success: function(d)
